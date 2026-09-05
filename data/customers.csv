@@ -1,0 +1,4 @@
+id,name,email,phone,segment,lifetime_value
+1,Aarav,aarav@example.com,+910000000001,premium,45000
+2,Diya,diya@example.com,+910000000002,standard,12000
+3,Rohan,rohan@example.com,+910000000003,business,90000

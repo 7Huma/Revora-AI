@@ -1,0 +1,2 @@
+Generate a concise, respectful recovery message. Never threaten the customer.
+Clearly explain the action the customer can take to complete payment.

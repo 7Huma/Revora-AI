@@ -1,0 +1,4 @@
+id,customer_id,amount,currency,status,failure_reason,payment_method
+1,1,4999,INR,failed,insufficient_funds,card
+2,2,2499,INR,success,,upi
+3,3,25000,INR,failed,bank_declined,card

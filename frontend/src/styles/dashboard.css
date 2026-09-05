@@ -1,0 +1,2171 @@
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #eee8dc;
+  background: #110e0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #110e0a;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 220px;
+  padding: 28px 18px;
+  border-right: 1px solid #302b24;
+  background: #0d0b08;
+  position: fixed;
+  height: 100vh;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.brand span {
+  color: #d59b43;
+}
+
+nav {
+  display: grid;
+  gap: 8px;
+}
+
+nav button {
+  border: 0;
+  background: transparent;
+  color: #aaa398;
+  padding: 12px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+nav button.active,
+nav button:hover {
+  color: #f4eee4;
+  background: #242018;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  margin-left: 220px;
+  padding: 48px;
+  width: calc(100% - 220px);
+  max-width: 1400px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 34px;
+}
+
+.eyebrow {
+  color: #d59b43;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 8px 0;
+}
+
+.subtitle {
+  color: #aaa398;
+  font-size: 18px;
+}
+
+.refresh,
+.case button {
+  background: #eee8dc;
+  color: #17130f;
+  border: 0;
+  padding: 11px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* =========================
+   METRICS
+========================= */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.metric-card {
+  background: #191510;
+  border: 1px solid #302b24;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.metric-card span {
+  color: #999187;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.metric-card strong {
+  font-size: 28px;
+}
+
+.risk strong {
+  color: #d59b43;
+}
+
+/* =========================
+   PANELS
+========================= */
+
+.panel {
+  background: #15120e;
+  border: 1px solid #302b24;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.panel-header span {
+  color: #8d877e;
+}
+
+.panel-subtitle {
+  color: #aaa398;
+  margin: 8px 0 0;
+}
+
+/* =========================
+   RECOVERY CASES
+========================= */
+
+.cases {
+  width: 100%;
+}
+
+.case {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 130px 110px;
+  gap: 24px;
+  align-items: center;
+
+  padding: 20px 0;
+  border-top: 1px solid #2b261f;
+
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.case:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.case-main {
+  min-width: 0;
+}
+
+.case-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+
+.case h3 {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 16px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.case p {
+  color: #b3aca1;
+  text-transform: capitalize;
+  margin: 8px 0;
+}
+
+.case small {
+  color: #817b72;
+}
+
+.case-money {
+  font-size: 18px;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* =========================
+   STATUS BUTTON
+========================= */
+
+.case button {
+  width: 110px;
+  min-width: 110px;
+  padding: 11px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.case button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+  font-size: 10px;
+  font-weight: 900;
+  padding: 5px 7px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.badge.high {
+  background: #5b3228;
+  color: #f1c5b3;
+}
+
+.badge.medium {
+  background: #514229;
+  color: #e9c98d;
+}
+
+/* =========================
+   ERROR / EMPTY
+========================= */
+
+.error {
+  background: #3a211b;
+  border: 1px solid #6d392c;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #efc3b5;
+}
+
+.empty {
+  color: #8f8980;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.chart {
+  min-height: 320px;
+}
+
+/* ==================================================
+   AI RECOVERY DRAWER
+================================================== */
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  z-index: 90;
+  animation: fadeIn 0.2s ease;
+}
+
+.agent-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 520px;
+  max-width: 90vw;
+  height: 100vh;
+
+  background: #15130f;
+  border-left: 1px solid #342f27;
+
+  padding: 30px 26px;
+  overflow-y: auto;
+
+  z-index: 100;
+
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.45);
+
+  animation: drawerSlide 0.25s ease-out;
+}
+
+/* Drawer header */
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.drawer-header h2 {
+  margin: 6px 0 0;
+  font-size: 22px;
+}
+
+.drawer-close {
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #28241d;
+  color: #f5f1e8;
+
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.drawer-close:hover {
+  background: #3a342b;
+}
+
+/* =========================
+   RISK
+========================= */
+
+.risk-box {
+  margin-top: 25px;
+  padding: 20px;
+
+  border: 1px solid #3a342b;
+  border-radius: 12px;
+}
+
+.risk-box span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+.risk-box strong {
+  display: block;
+  font-size: 28px;
+  margin-top: 8px;
+}
+
+.risk-box small {
+  display: block;
+  margin-top: 3px;
+}
+
+/* =========================
+   DECISION ROWS
+========================= */
+
+.decision-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 17px 0;
+  border-bottom: 1px solid #302c26;
+}
+
+.decision-row span {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.decision-row strong {
+  text-align: right;
+  font-size: 13px;
+}
+
+/* =========================
+   RECOMMENDED ACTION
+========================= */
+
+.recommended-action {
+  margin-top: 22px;
+  padding: 20px;
+
+  border: 1px solid #443b2d;
+  border-radius: 12px;
+  background: #211e18;
+}
+
+.recommended-action span {
+  display: block;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #d9a441;
+  font-weight: 700;
+}
+
+.recommended-action strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+/* =========================
+   AI REASONING
+========================= */
+
+.ai-reasoning {
+  margin-top: 25px;
+}
+
+.ai-reasoning h3 {
+  margin-bottom: 10px;
+}
+
+.ai-reasoning p {
+  color: #b9b5ad;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* =========================
+   DRAWER STATS
+========================= */
+
+.drawer-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  margin-top: 25px;
+  padding-top: 20px;
+
+  border-top: 1px solid #302c26;
+}
+
+.drawer-stats span {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.drawer-stats strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+/* =========================
+   INTERVENTION HISTORY
+========================= */
+
+.intervention-history {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #302c26;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-header h3 {
+  margin: 0;
+}
+
+.history-header span {
+  background: #2b261e;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.history-empty {
+  color: #888;
+  margin-top: 15px;
+}
+
+.timeline {
+  margin-top: 18px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 20px;
+}
+
+.timeline-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+
+  border-radius: 50%;
+  background: #d59d35;
+
+  flex-shrink: 0;
+}
+
+.timeline-item strong {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.timeline-item p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.timeline-item small {
+  color: #777;
+}
+
+/* =========================
+   DEMO BUTTON
+========================= */
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.demo-reset {
+  padding: 11px 16px;
+
+  border: 1px solid #4a4135;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #ddd;
+
+  cursor: pointer;
+}
+
+.demo-reset:hover {
+  background: #252019;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes drawerSlide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .content {
+    margin-left: 180px;
+    width: calc(100% - 180px);
+    padding: 25px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case {
+    grid-template-columns: minmax(0, 1fr) 110px 100px;
+    gap: 15px;
+  }
+
+  .case button {
+    width: 100px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .case {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .case-money {
+    text-align: left;
+  }
+
+  .case button {
+    width: 100%;
+  }
+
+  .agent-drawer {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+  }
+}
+/* ================================
+   ANALYTICS
+================================ */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.analytics-card {
+  background: #191510;
+  border: 1px solid #302b24;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.analytics-card span {
+  display: block;
+  color: #999187;
+  font-size: 13px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.analytics-card strong {
+  display: block;
+  font-size: 28px;
+  color: #eee8dc;
+}
+
+/* Revenue Performance */
+
+.revenue-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 100px;
+  height: 280px;
+  padding: 30px 20px 10px;
+}
+
+.bar-group {
+  height: 100%;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.bar {
+  width: 70px;
+  min-height: 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.bar.at-risk {
+  background: #8a5b2b;
+}
+
+.bar.recovered {
+  background: #d59b43;
+}
+
+.bar-group span {
+  color: #aaa398;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.bar-group strong {
+  font-size: 17px;
+  color: #eee8dc;
+}
+
+/* Recovery by Root Cause */
+
+.analytics-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 16px 0;
+  border-top: 1px solid #2b261f;
+}
+
+.analytics-row:first-of-type {
+  border-top: 0;
+}
+
+.analytics-row span {
+  color: #b3aca1;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.analytics-row strong {
+  color: #eee8dc;
+  font-size: 16px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Analytics mobile */
+
+@media (max-width: 800px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .revenue-bars {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .revenue-bars {
+    gap: 25px;
+    height: 240px;
+  }
+
+  .analytics-row {
+    gap: 15px;
+  }
+}
+
+/* =========================================
+   PHASE 0 - AI DECISION INTELLIGENCE
+========================================= */
+
+.ai-score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.ai-score-card {
+  padding: 16px;
+  border: 1px solid #3a342b;
+  border-radius: 10px;
+  background: #191611;
+}
+
+.ai-score-card.expected {
+  grid-column: 1 / -1;
+  border-color: #5a472c;
+  background: #211c14;
+}
+
+.ai-score-card span {
+  display: block;
+  color: #999187;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.ai-score-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.ai-score-card small {
+  display: block;
+  margin-top: 5px;
+  color: #777169;
+  font-size: 11px;
+}
+
+/* Decision trace */
+
+.decision-trace {
+  margin-top: 28px;
+  padding-top: 25px;
+  border-top: 1px solid #302c26;
+}
+
+.trace-header h3 {
+  margin: 6px 0 20px;
+  font-size: 16px;
+}
+
+.trace-step {
+  display: flex;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid #28241e;
+}
+
+.trace-number {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2b2419;
+  color: #d59b43;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.trace-step strong {
+  display: block;
+  font-size: 13px;
+}
+
+.trace-step p {
+  margin: 5px 0 0;
+  color: #8f8980;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.case-money strong {
+  display: block;
+}
+
+.case-expected {
+  display: block;
+  margin-top: 5px;
+  color: #d59b43;
+  font-size: 12px;
+}
+
+.case-probability {
+  display: block;
+  margin-top: 3px;
+  color: #777169;
+  font-size: 11px;
+}
+
+.decision-reason {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-color, #2a2722);
+}
+
+.decision-reason > span {
+  display: block;
+  font-size: 12px;
+  color: #aaa39a;
+  margin-bottom: 10px;
+}
+
+.decision-reason > p {
+  margin: 0;
+  color: #d8d3cb;
+  font-size: 13px;
+  line-height: 1.65;
+  font-weight: 400;
+  text-align: left;
+}
+/* ============================================================
+   PHASE 2 — AI AUTONOMOUS RECOVERY
+   ============================================================ */
+
+.ai-subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.ai-priority-card {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.025);
+}
+
+.ai-priority-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.ai-priority-card h3 {
+  margin: 4px 0 0;
+  font-size: 20px;
+}
+
+.ai-priority-card > p {
+  margin: 12px 0 0;
+  font-size: 13px;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+.ai-priority-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.ai-priority-badge.high {
+  background: rgba(239,68,68,0.12);
+}
+
+.ai-priority-badge.medium {
+  background: rgba(245,158,11,0.12);
+}
+
+.ai-priority-badge.low {
+  background: rgba(34,197,94,0.12);
+}
+
+/* WHY NOW / WHY ACTION */
+
+.ai-insight-card {
+  margin: 18px 0;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.025);
+}
+
+.ai-insight-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ai-insight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.06);
+
+  font-size: 15px;
+}
+
+.ai-insight-card h3 {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+
+.ai-insight-card > p {
+  margin: 14px 0 0;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  opacity: 0.72;
+}
+
+.action-reason {
+  margin-top: 18px;
+}
+
+/* KEY SIGNALS */
+
+.ai-signals {
+  margin: 20px 0;
+}
+
+.ai-section-heading h3 {
+  margin: 4px 0 14px;
+  font-size: 15px;
+}
+
+.signal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.signal-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px 12px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.035);
+
+  font-size: 13px;
+}
+
+.signal-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: rgba(34,197,94,0.12);
+
+  font-size: 11px;
+}
+
+/* ============================================================
+   EXECUTE PANEL
+   ============================================================ */
+
+.ai-execute-panel {
+  margin: 20px 0;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.055),
+      rgba(255,255,255,0.018)
+    );
+}
+
+.ai-execute-panel h3 {
+  margin: 5px 0 8px;
+  font-size: 17px;
+}
+
+.ai-execute-panel p:not(.eyebrow) {
+  margin: 0 0 16px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  opacity: 0.65;
+}
+
+.ai-execute-button {
+  width: 100%;
+
+  padding: 13px 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.ai-execute-button:hover {
+  transform: translateY(-1px);
+}
+
+.ai-execute-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* ============================================================
+   EXECUTION RESULT
+   ============================================================ */
+
+.execution-result {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+
+  margin: 18px 0;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(34,197,94,0.18);
+
+  background: rgba(34,197,94,0.06);
+}
+
+.execution-result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(34,197,94,0.14);
+
+  font-weight: 700;
+}
+
+.execution-result h3 {
+  margin: 4px 0 6px;
+  font-size: 15px;
+}
+
+.execution-result p:not(.eyebrow) {
+  margin: 0 0 8px;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  opacity: 0.65;
+}
+
+.execution-result strong {
+  font-size: 15px;
+}
+
+.execution-error {
+  margin: 12px 0;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: rgba(239,68,68,0.08);
+
+  font-size: 12px;
+}
+
+/* ============================================================
+   SMART INTERVENTION
+   ============================================================ */
+
+.smart-intervention {
+  margin: 20px 0;
+  padding: 18px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.09);
+
+  background: rgba(255,255,255,0.025);
+}
+
+.smart-intervention-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.smart-intervention-header h3 {
+  margin: 4px 0 0;
+  font-size: 16px;
+}
+
+.channel-badge {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  background: rgba(255,255,255,0.07);
+}
+
+.selected-channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 18px;
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.04);
+}
+
+.channel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.07);
+
+  font-size: 17px;
+}
+
+.selected-channel span,
+.channel-reason > span {
+  display: block;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0.45;
+}
+
+.selected-channel strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 14px;
+}
+
+.channel-reason {
+  margin-top: 16px;
+}
+
+.channel-reason p {
+  margin: 7px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  opacity: 0.65;
+}
+/* =========================================================
+   REVORA AI — CINEMATIC / BUILDATHON THEME
+   ========================================================= */
+
+:root {
+  --revora-bg: #0b0a08;
+  --revora-surface: #12100d;
+  --revora-surface-2: #181510;
+
+  --revora-border: rgba(238, 232, 220, 0.12);
+  --revora-border-strong: rgba(238, 232, 220, 0.20);
+
+  --revora-cream: #f3eee4;
+  --revora-muted: #938d84;
+
+  --revora-amber: #d99a35;
+  --revora-amber-light: #e6ad55;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html {
+  background: var(--revora-bg);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 82% 4%,
+      rgba(217, 154, 53, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 25% 85%,
+      rgba(151, 93, 29, 0.05),
+      transparent 30%
+    ),
+    var(--revora-bg);
+
+  color: var(--revora-cream);
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+/* subtle cinematic grid */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: -1;
+
+  opacity: 0.035;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background: transparent;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  width: 232px;
+  height: 100vh;
+
+  padding: 26px 18px;
+
+  background: rgba(9, 8, 7, 0.94);
+
+  border-right:
+    1px solid var(--revora-border);
+
+  backdrop-filter: blur(18px);
+
+  z-index: 10;
+}
+
+.brand {
+  margin: 2px 5px 58px;
+
+  color: var(--revora-cream);
+
+  font-size: 28px;
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+
+  line-height: 1;
+}
+
+.brand span {
+  color: var(--revora-amber);
+}
+
+/* small product descriptor */
+
+.sidebar::after {
+  content: "AUTONOMOUS REVENUE RECOVERY";
+
+  position: absolute;
+
+  left: 23px;
+  bottom: 28px;
+
+  width: 165px;
+
+  color: #5e5952;
+
+  font-size: 8px;
+  line-height: 1.5;
+
+  letter-spacing: 0.16em;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+  display: grid;
+  gap: 4px;
+}
+
+nav button {
+  position: relative;
+
+  border: none;
+
+  background: transparent;
+
+  color: #827c73;
+
+  padding: 12px 13px 12px 16px;
+
+  border-radius: 6px;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+nav button:hover {
+  color: var(--revora-cream);
+
+  background: #211d17;
+}
+
+nav button.active {
+  color: var(--revora-cream);
+
+  background: #211d17;
+}
+
+nav button::before {
+  content: "";
+
+  position: absolute;
+
+  left: 5px;
+  top: 50%;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+
+  background: transparent;
+}
+
+nav button.active::before {
+  background: var(--revora-amber);
+
+  box-shadow:
+    0 0 10px rgba(217, 154, 53, 0.6);
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content {
+  width: calc(100% - 232px);
+
+  margin-left: 232px;
+
+  padding:
+    54px
+    56px
+    70px;
+
+  max-width: 1500px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 38px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+
+  color: var(--revora-amber);
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 950px;
+
+  margin: 0;
+
+  color: var(--revora-cream);
+
+  font-size:
+    clamp(
+      42px,
+      5vw,
+      68px
+    );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 750;
+}
+
+.subtitle {
+  margin-top: 17px;
+
+  color: #f3eee4;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 0.01em;
+
+  text-shadow:
+    0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
+
+.header-actions {
+  display: flex;
+
+  gap: 8px;
+
+  padding-top: 7px;
+}
+
+.demo-reset,
+.refresh {
+  border:
+    1px solid var(--revora-border-strong);
+
+  border-radius: 3px;
+
+  padding:
+    10px
+    15px;
+
+  background: transparent;
+
+  color: var(--revora-cream);
+
+  font-size: 11px;
+
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border 0.18s ease;
+}
+
+.demo-reset:hover,
+.refresh:hover {
+  background: var(--revora-cream);
+
+  color: #17130f;
+
+  border-color: var(--revora-cream);
+}
+
+/* =========================================================
+   METRIC CARDS
+   ========================================================= */
+
+.metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 1px;
+
+  margin-bottom: 30px;
+
+  border:
+    1px solid var(--revora-border);
+
+  background:
+    var(--revora-border);
+}
+
+.metric-card,
+.analytics-card {
+  min-height: 132px;
+
+  padding:
+    22px
+    20px;
+
+  border: none;
+
+  border-radius: 0;
+
+  background:
+    rgba(18, 16, 13, 0.94);
+
+  transition:
+    background 0.18s ease;
+}
+
+.metric-card:hover,
+.analytics-card:hover {
+  background: #18140f;
+}
+
+.metric-card span,
+.analytics-card span {
+  display: block;
+
+  margin-bottom: 24px;
+
+  color: #777169;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.metric-card strong,
+.analytics-card strong {
+  color: var(--revora-cream);
+
+  font-size: 30px;
+
+  letter-spacing: -0.04em;
+}
+
+/* risk numbers */
+
+.risk strong {
+  color: var(--revora-amber);
+}
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.panel {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  padding: 26px;
+
+  background:
+    rgba(16, 14, 11, 0.90);
+
+  border:
+    1px solid var(--revora-border);
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 18px 70px rgba(0, 0, 0, 0.16);
+}
+
+/* amber cinematic accent */
+
+.panel::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 24px;
+
+  width: 42px;
+  height: 1px;
+
+  background:
+    var(--revora-amber);
+
+  box-shadow:
+    0 0 14px
+    rgba(217, 154, 53, 0.35);
+}
+
+.panel-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 20px;
+}
+
+.panel-header h2 {
+  margin: 0;
+
+  color: var(--revora-cream);
+
+  font-size: 15px;
+
+  letter-spacing: -0.01em;
+}
+
+.panel-header span {
+  color: #6d6860;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   RECOVERY CASES
+   ========================================================= */
+
+.case {
+  padding:
+    18px
+    10px;
+
+  border-top:
+    1px solid
+    rgba(238, 232, 220, 0.075);
+
+  transition:
+    background 0.18s ease;
+}
+
+.case:hover {
+  background:
+    rgba(217, 154, 53, 0.025);
+}
+
+.case h3 {
+  color: #e7e1d6;
+
+  font-size: 14px;
+
+  letter-spacing: -0.01em;
+}
+
+.case p {
+  color: #817b72;
+
+  font-size: 12px;
+}
+
+.case small,
+.case-probability {
+  color: #5f5a53;
+}
+
+.case-money {
+  color: var(--revora-cream);
+
+  font-size: 15px;
+}
+
+.case-expected {
+  color: var(--revora-amber);
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+  border:
+    1px solid
+    rgba(217, 154, 53, 0.22);
+
+  border-radius: 2px;
+
+  background:
+    rgba(217, 154, 53, 0.08) !important;
+
+  color: #dca85a !important;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   CASE ACTION BUTTON
+   ========================================================= */
+
+.case button {
+  width: 104px;
+  min-width: 104px;
+
+  padding: 10px;
+
+  border:
+    1px solid
+    rgba(238, 232, 220, 0.18);
+
+  border-radius: 3px;
+
+  background: var(--revora-cream);
+
+  color: #16120e;
+
+  font-size: 10px;
+
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.case button:hover {
+  background: #ffffff;
+
+  transform:
+    translateY(-1px);
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error {
+  margin-bottom: 20px;
+
+  padding: 13px 15px;
+
+  background:
+    rgba(112, 43, 27, 0.18);
+
+  border:
+    1px solid
+    rgba(196, 86, 54, 0.35);
+
+  border-radius: 2px;
+
+  color: #d9a99b;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CHART
+   ========================================================= */
+
+.analytics-grid {
+  display: grid;
+
+  gap: 1px;
+
+  border:
+    1px solid
+    var(--revora-border);
+
+  background:
+    var(--revora-border);
+}
+
+.analytics-card strong {
+  font-size: 34px;
+}
+
+.revenue-bars {
+  gap:
+    clamp(
+      50px,
+      12vw,
+      150px
+    );
+}
+
+.bar {
+  width: 76px;
+
+  border-radius: 0;
+}
+
+.bar.at-risk {
+  background: #765022;
+}
+
+.bar.recovered {
+  background:
+    var(--revora-amber);
+
+  box-shadow:
+    0 0 24px
+    rgba(217, 154, 53, 0.12);
+}
+
+.bar-group span {
+  color: #777169;
+
+  font-size: 9px;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+.bar-group strong {
+  color: var(--revora-cream);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .content {
+    width: calc(100% - 190px);
+
+    margin-left: 190px;
+
+    padding:
+      38px
+      28px
+      60px;
+  }
+
+  .metrics {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      var(--revora-border);
+  }
+
+  .app {
+    display: block;
+  }
+
+  .content {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding:
+      28px
+      18px
+      50px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+}
+/* =========================================================
+   REVORA AI — CINEMATIC IMAGE BACKGROUND
+   ========================================================= */
+
+body {
+  
+  margin: 0;
+
+  background:
+    #0b0907
+    url("/revora-bg.jpg")
+    center center / cover fixed no-repeat;
+
+  color: var(--revora-cream);
+
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+/* Dark cinematic overlay */
+/* More faded cinematic background */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 7, 6, 0.995) 0%,
+      rgba(8, 7, 6, 0.97) 25%,
+      rgba(8, 7, 6, 0.90) 55%,
+      rgba(8, 7, 6, 0.95) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 7, 6, 0.78) 0%,
+      rgba(8, 7, 6, 0.92) 100%
+    );
+}
+/* Make the app transparent so the image shows through */
+.app {
+  background: transparent !important;
+}
+
+/* Sidebar glass effect */
+.sidebar {
+  background: rgba(8, 7, 6, 0.68) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-right:
+    1px solid rgba(243, 238, 228, 0.10);
+}
+
+/* Main content stays slightly transparent */
+.content {
+  background: transparent !important;
+}
+
+/* Cards become cinematic glass panels */
+.metric-card,
+.analytics-card,
+.panel {
+  background: rgba(14, 12, 10, 0.76) !important;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-color: rgba(243, 238, 228, 0.14);
+}
+
+/* Slight warm glow */
+.panel::before {
+  background: #d99a35;
+  box-shadow: 0 0 18px rgba(217, 154, 53, 0.45);
+}

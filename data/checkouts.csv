@@ -1,0 +1,3 @@
+id,customer_id,session_id,cart_value,event_type
+1,2,CHK001,7999,abandoned
+2,1,CHK002,2499,completed
