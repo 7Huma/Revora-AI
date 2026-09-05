@@ -51,7 +51,7 @@ Revora AI treats every recovery case as a decision problem.
 
 ---
 
-# 💡 Our Approach
+# 💡 My Approach
 
 Revora AI follows a closed-loop recovery lifecycle:
 
