@@ -1,4 +1,4 @@
-# ⚡ Revora AI — Autonomous Revenue Recovery
+# ⚡ Revora AI — Revenue Recovery
 
 > **Detect. Diagnose. Recover. Measure.**
 
